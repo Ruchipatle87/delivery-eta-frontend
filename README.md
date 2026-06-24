@@ -1,16 +1,50 @@
-# React + Vite
+# Delivery ETA Frontend — Dispatch Console
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React interface for the Delivery ETA Predictor — styled as a logistics dispatch console rather than a generic form, to match the subject matter.
 
-Currently, two official plugins are available:
+This is the frontend half of a two-part project. See the backend here: [delivery-eta-backend](https://github.com/Ruchipatle87/delivery-eta-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What this does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Lets a user enter order details (distance, weather, traffic, rider info) and see a live predicted delivery time, returned by a self-trained Random Forest model running on a FastAPI backend.
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Design
+
+- Theme: dark "dispatch console" — order details styled as a dispatch ticket, prediction shown on an animated radial ETA dial (like a radar gauge)
+- Palette: near-black charcoal background, amber accent for live data, cyan accent for secondary route info
+- Typography: Rajdhani (technical/condensed) for headers, Inter for body text, JetBrains Mono for the numeric readout
+- Key Factors panel: illustrative breakdown of traffic, distance, and weather influence, informed by SHAP feature importance findings from the backend model
+
+---
+
+## Tech stack
+
+- React (Vite)
+- Tailwind CSS
+- lucide-react — icons
+
+---
+
+## Running locally
+
+npm install
+npm run dev
+
+Visit http://localhost:5173/
+
+Important: this frontend calls a FastAPI backend at http://127.0.0.1:8000/predict. Make sure the backend is running locally (or update the fetch URL to a deployed backend) for predictions to work.
+
+---
+
+## Project structure
+
+delivery-eta-frontend/
+- src/App.jsx (main dispatch console component)
+- src/main.jsx
+- src/index.css
+- tailwind.config.js
+- package.json
