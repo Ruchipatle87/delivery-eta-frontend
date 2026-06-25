@@ -1,5 +1,8 @@
 # Delivery ETA Frontend — Dispatch Console
 
+**Live App:** https://delivery-eta-frontend.vercel.app
+**Live API:** https://delivery-eta-api-zbsz.onrender.com/docs
+
 A React interface for the Delivery ETA Predictor — styled as a logistics dispatch console rather than a generic form, to match the subject matter.
 
 This is the frontend half of a two-part project. See the backend here: [delivery-eta-backend](https://github.com/Ruchipatle87/delivery-eta-backend)
